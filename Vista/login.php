@@ -39,11 +39,7 @@
 			<div class="login-bottom">
 				<input id="User" name="User" type="text" placeholder="Usuario" value=""/>
 				<input id="Password" name="Password" type="password" placeholder="Contraseña" value=""/>
-				<p>
-					<div id="resultado" name="resultado" class="ui-widget">
-
-					</div>
-				</p>
+					<div id="resultado" name="resultado" class="ui-widget"></div>
 				<br/>
 				<div class="send">
 					<label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Remember</label>

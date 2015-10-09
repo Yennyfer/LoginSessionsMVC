@@ -95,18 +95,18 @@ class usuarios_controller{
 					$_SESSION['TipoUsuario'] = $respuesta['Tipo'];
 					echo TRUE;
 				}else if($respuesta == "Password Incorrecto"){
-					echo "<div class='ui-state-highlight ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
+					echo "<div class='ui-state-error ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
 						echo "<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
 						echo "<strong>Error!</strong> La Contraseña No Coincide Con El Usuario</p>";
 					echo "</div>";
 				}else if($respuesta == "No existe el usuario"){
-					echo "<div class='ui-state-highlight ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
+					echo "<div class='ui-state-error ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
 						echo "<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
 						echo "<strong>Error!</strong> No Existe Un Usuario Con Estos Datos</p>";
 					echo "</div>";
 				}
 			}else{
-				echo "<div class='ui-state-highlight ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
+				echo "<div class='ui-state-error ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
 					echo "<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
 					echo "<strong>Error!</strong> Datos Vacios</p>";
 				echo "</div>";
