@@ -35,7 +35,7 @@
 			</div>
 		   <div class="clear"> </div>
 		</div>
-		<form name="frmLogin">
+		<form id="frmLogin" name="frmLogin" action="../Controlador/usuarios_controller.php?action=Login">
 			<div class="login-bottom">
 				<input id="User" name="User" type="text" placeholder="Usuario" value=""/>
 				<input id="Password" name="Password" type="password" placeholder="Contraseña" value=""/>
@@ -43,7 +43,8 @@
 				<br/>
 				<div class="send">
 					<label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Remember</label>
-					<div class="now"> <input id="btnEnviar" name="btnEnviar" type="button" value="Ingresar"> </div>
+					<div class="now"> <input id="btnEnviar" name="btnEnviar" type="submit" value="Ingresar"> </div>
+					<div class="now"> <input id="btnLimpiar" name="btnLimpiar" type="reset" value="Cancelar"> </div>
 				</div>
 			</div>
 		</form>
@@ -54,7 +55,8 @@
 </div>
 
 	<script>
-		$("#btnEnviar").click(function() {
+		$("#frmLogin").submit(function() {
+			e.preventDefault();
 			var User = $("#User").val();
 			var Password = $("#Password").val();
 
