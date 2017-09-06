@@ -91,9 +91,16 @@ class usuarios_controller{
 			if(!empty($User) && !empty($Password)){
 				$respuesta = usuarios::Login($User, $Password);
 				if (is_array($respuesta)) {
-					$_SESSION['idUsuario'] = $respuesta['idUsuarios'];
-					$_SESSION['TipoUsuario'] = $respuesta['Tipo'];
-					echo TRUE;
+					if($respuesta["Estado"] == "Activo"){
+						$_SESSION['idUsuario'] = $respuesta['idUsuarios'];
+						$_SESSION['TipoUsuario'] = $respuesta['Tipo'];
+						echo TRUE;
+					}else{
+						echo "<div class='ui-state-error ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
+							echo "<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
+							echo "<strong>Error!</strong> El Usuario se encuentra Inactivo</p>";
+						echo "</div>";
+				    	}
 				}else if($respuesta == "Password Incorrecto"){
 					echo "<div class='ui-state-error ui-corner-all' style='margin-top: 20px; padding: 0 .7em;'>";
 						echo "<p><span class='ui-icon ui-icon-alert' style='float: left; margin-right: .3em;'></span>";
